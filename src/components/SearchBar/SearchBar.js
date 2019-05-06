@@ -36,7 +36,7 @@ const Input = styled.input`
   
 `;
 
-const Button = styled.button`
+const Icon = styled.button`
   line-height: 1;
   pointer-events: ${props => (props.searchOpen ? "auto" : "none")};
   cursor: ${props => (props.searchOpen ? "pointer" : "none")};
@@ -80,11 +80,17 @@ function SearchBar() {
   
     return (
         <div>
-            <Form>
+            <Form
                 searchOpen={searchOpen}
                 onSubmit={onSubmit}
                 onClick={setSearchOpen(true)}, onClick={inputFocus.current.focus}
                 ref={formRef}
+            >    
+                <Icon
+                searchOpen={searchOpen}
+            >
+                
+                </Icon>
             </Form>
         </div>
     );
