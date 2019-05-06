@@ -1,47 +1,35 @@
-import React, { Component } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink 
-} from 'reactstrap';
+import React from 'react';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-export default class Navigation extends Component {
+
+export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      isOpen: false
+      collapsed: true
     };
   }
-  toggle() {
+
+  toggleNavbar() {
     this.setState({
-      isOpen: !this.state.isOpen
+      collapsed: !this.state.collapsed
     });
   }
   render() {
     return (
       <div>
-        <Navbar color light expand="md">
-          <NavbarBrand href="/">Blockbuster</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+        <Navbar color="faded" light>
+        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <NavbarBrand href="/" className="ml-auto">reactstrap</NavbarBrand>
+          <Collapse isOpen={!this.state.collapsed} navbar>
+            <Nav navbar>
               <NavItem>
-                <NavLink href="/">Latest</NavLink>
+                <NavLink href="/components/">Components</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Popular</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Top Rated</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Upcoming</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
