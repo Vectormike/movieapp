@@ -48,20 +48,10 @@ const Button = styled.button`
 
 function SearchBar() {
 
-    const [state, setState] = useState("");
+    const [value, setValue] = useState("");
     const [searchOpen, setSearchOpen] = useState(false);
-    const FormRef = useRef();
-
-
-    // When user clicks outside of the form, set bar opened to false, to close it
-    const onClick = (e) => {
-        if (formRef.current.contains(e.target)) {
-            // click was inside form, do nothing
-            return;
-        }
-        console.log("Click outside the form, close it");
-        searchOpen(false);
-    };
+    const formRef = useRef();
+    const inputFocus = useRef();
 
     useLayoutEffect(() => {
         // add when mounted
@@ -72,11 +62,30 @@ function SearchBar() {
         };
       }, []);
 
-      
+    // When user clicks outside of the form, set bar opened to false, to close it
+    const onClick = (e) => {
+        if (formRef.current.contains(e.target)) {
+            // click was inside form, do nothing
+            return;
+        }
+        console.log("Click outside the form, close it");
+        searchOpen(false);
+    };
+    
+    const onSubmit = (e) => {
+        e.preventDefault();
+        setValue(e)
+        setSearchOpen(false);
+    }
   
     return (
         <div>
-            <h1>search bar</h1>
+            <Form>
+                searchOpen={searchOpen}
+                onSubmit={onSubmit}
+                onClick={setSearchOpen(true)}, onClick={inputFocus.current.focus}
+                ref={formRef}
+            </Form>
         </div>
     );
 }
