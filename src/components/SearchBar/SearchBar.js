@@ -29,7 +29,6 @@ const Input = styled.input`
   transition: all 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
 
   &:focus,
-  
   &::placeholder {
     color: blue;
   }
@@ -55,21 +54,21 @@ function SearchBar() {
 
     useLayoutEffect(() => {
         // add when mounted
-        document.addEventListener("mousedown", onClick);
+        document.addEventListener("mousedown", mouseClick);
         // cleanup event when unmounted
         return () => {
-          document.removeEventListener("mousedown", onClick);
+          document.removeEventListener("mousedown", mouseClick);
         };
       }, []);
 
     // When user clicks outside of the form, set bar opened to false, to close it
-    const onClick = (e) => {
+    const mouseClick = (e) => {
         if (formRef.current.contains(e.target)) {
             // click was inside form, do nothing
             return;
         }
         console.log("Click outside the form, close it");
-        searchOpen(false);
+        setSearchOpen(false);
     };
     
     const onSubmit = (e) => {
@@ -77,23 +76,41 @@ function SearchBar() {
         setValue(e)
         setSearchOpen(false);
     }
+
+    const onClick = () => {
+      setSearchOpen(true); 
+      inputFocus.current.focus();
+    }
   
+    const onChange = (e) => {
+      setValue(e.target.value);
+    }
     return (
         <div>
             <Form
                 searchOpen={searchOpen}
                 onSubmit={onSubmit}
-                onClick={setSearchOpen(true)}, onClick={inputFocus.current.focus}
+                onClick={onClick}
                 ref={formRef}
             >    
                 <Icon
                 searchOpen={searchOpen}
-            >
-                
+                >
+                <FontAwesomeIcon icon='fas search'/>
                 </Icon>
+                <Input
+                onChange={onChange}
+                ref={inputFocus}
+                searchOpen={searchOpen}
+                value={value}
+                placeholder='Search for a movie'
+                />
             </Form>
         </div>
     );
 }
 
 export default SearchBar;
+
+
+// Credit => https://codesandbox.io/s/731r7084p0
