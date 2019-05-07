@@ -2,8 +2,9 @@ import React, { useState, useLayoutEffect, useRef } from 'react';
 
 import styled from 'styled-components'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Form = styled.form`
   position: relative;
@@ -11,7 +12,7 @@ const Form = styled.form`
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 20px grey;
-  background-color: black;
+  background-color: red;
   width: ${props => (props.searchOpen ? "30rem" : "2rem")};
   cursor: ${props => (props.searchOpen ? "auto" : "pointer")};
   padding: 2rem;
@@ -35,7 +36,7 @@ const Input = styled.input`
   
 `;
 
-const Icon = styled.button`
+const Button = styled.button`
   line-height: 1;
   pointer-events: ${props => (props.searchOpen ? "auto" : "none")};
   cursor: ${props => (props.searchOpen ? "pointer" : "none")};
@@ -60,14 +61,11 @@ function SearchBar() {
           document.removeEventListener("mousedown", mouseClick);
         };
       }, []);
-
-    // When user clicks outside of the form, set bar opened to false, to close it
+      
     const mouseClick = (e) => {
         if (formRef.current.contains(e.target)) {
-            // click was inside form, do nothing
-            return;
+          return;
         }
-        console.log("Click outside the form, close it");
         setSearchOpen(false);
     };
     
@@ -93,11 +91,12 @@ function SearchBar() {
                 onClick={onClick}
                 ref={formRef}
             >    
-                <Icon
+                <Button
+                type="submit"
                 searchOpen={searchOpen}
                 >
-                <FontAwesomeIcon icon='fas search'/>
-                </Icon>
+                  <FontAwesomeIcon icon={faSearch} size="2x" />
+                </Button>
                 <Input
                 onChange={onChange}
                 ref={inputFocus}
