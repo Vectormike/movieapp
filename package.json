@@ -8,6 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "i": "^0.3.6",
     "npm": "^6.9.0",
