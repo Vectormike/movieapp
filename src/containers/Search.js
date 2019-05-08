@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import {} from '../components/SearchBar/SearchBar';
-
-// API key
-const api_key = '779cb993a7038477d49a9deabe16ed77';
 
 
 
 function Search() {
+
+    const [search, setSearch] = useState([]);
+
     async function searchMovie() {
-        
+        try {
+            let data = await fetch();
+            let searched = await data.json();
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
