@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import {} from '../components/SearchBar/SearchBar';
+import React, {useEffect} from 'react'
+import { connect } from 'react-redux';
+import { searchMovies } from '../action/index';
 
+const Search = () => {
 
-
-function Search() {
-
-    const [search, setSearch] = useState([]);
-
-    async function searchMovie() {
-        try {
-            let data = await fetch();
-            let searched = await data.json();
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    useEffect(() => {
+      return () => {
+        effect
+      };
+    }, [input])
+    
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
-export default Search;
+export default connect()(searchMovies)
