@@ -6,9 +6,8 @@ const Search = () => {
 
     useEffect(() => {
       return () => {
-        effect
       };
-    }, [input])
+    }, [])
     
   return (
     <div>
@@ -17,4 +16,4 @@ const Search = () => {
   )
 }
 
-export default connect()(searchMovies)
+export default connect(searchMovies)(Search)
