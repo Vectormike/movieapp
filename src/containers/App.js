@@ -1,9 +1,9 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+
 import '../styles/App.css';
 import Navigation from '../components/Navbar/Navigation';
 import Home from '../components/Home/Home';
-
+import Popular from '../containers/Popular/Popular';
 
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <div className="App">
         <Navigation/>
         <Home/>
+        <Popular/>
       </div>
   );
 }
