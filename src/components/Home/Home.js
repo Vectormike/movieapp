@@ -7,7 +7,7 @@ class Home extends Component {
       <div>
         <Nav tabs>
           <NavItem>
-            <NavLink to="/popular" active>Link</NavLink>
+            <NavLink to="/popular" active>Popular</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/new">Link</NavLink>
