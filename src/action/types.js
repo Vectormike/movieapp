@@ -1,1 +1,0 @@
-export const FETCH_MOVIE_SEARCH = 'FETCH_MOVIE_SEARCH'; 

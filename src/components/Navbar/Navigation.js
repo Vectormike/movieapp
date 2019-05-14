@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
+import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 import SearchBar from '../SearchBar/SearchBar';
 
 export default class Navigation extends React.Component {
@@ -22,23 +22,9 @@ export default class Navigation extends React.Component {
       <div>
         <Navbar color="faded" light>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+        <NavbarBrand href="/">Moviemania</NavbarBrand>
           <SearchBar href="/" className="ml-auto"/>
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <span className="discover">Discover</span>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="/components/">Latest</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Popular</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Top Rated</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Upcoming</NavLink>
-              </NavItem>
-            </Nav>
             <Nav navbar>
                 <span className="genres">Genres</span>
                 <NavItem>

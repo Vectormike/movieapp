@@ -1,20 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from '../store/index';
 import '../styles/App.css';
 import Navigation from '../components/Navbar/Navigation';
-import Search from '../containers/Search';
+import Home from '../components/Home/Home';
 
 
 
 function App() {
   return (
-    <Provider store={store}>
       <div className="App">
         <Navigation/>
-        <Search/>
+        <Home/>
       </div>
-    </Provider>
   );
 }
 

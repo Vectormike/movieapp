@@ -12,17 +12,17 @@ const Form = styled.form`
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 20px grey;
-  background-color: red;
-  width: ${props => (props.searchOpen ? "30rem" : "2rem")};
+  background-color: grey;
+  width: ${props => (props.searchOpen ? "20rem" : "1rem")};
   cursor: ${props => (props.searchOpen ? "auto" : "pointer")};
   padding: 2rem;
-  height: 2rem;
+  height: 1rem;
   border-radius: 8rem;
   transition: all 800ms cubic-bezier(0.645, 1.045, 0.355, 1);
 `;
 
 const Input = styled.input`
-  font-size: 12px;
+  font-size: 14px;
   background-color: transparent;
   width: 100%;
   margin-left: ${props => (props.searchOpen ? "1rem" : "0rem")};
@@ -31,7 +31,7 @@ const Input = styled.input`
 
   &:focus,
   &::placeholder {
-    color: blue;
+    color: white;
   }
   
 `;
