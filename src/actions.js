@@ -17,5 +17,4 @@ export const requestPopular = () => async dispatch => {
     } catch (error) {
         dispatch({type: REQUEST_POPULAR_FAILED, payload: error})
     }
-
-}
+};
