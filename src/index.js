@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './containers/App';
-
+import { requestPopular } from './reducers';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import * as serviceWorker from './utils/serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const logger = createLogger();
 
-const store = createStore();
+const rootReducer = combineReducers({requestPopular});
 
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
 <Provider store ={store}>
