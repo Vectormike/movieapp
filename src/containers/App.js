@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/App.css';
 import Navigation from '../components/Navbar/Navigation';
 import Home from '../components/Home/Home';
-import Popular from '../containers/Popular/Popular';
+import Popular from '../containers/Popular';
 
 
 function App() {
