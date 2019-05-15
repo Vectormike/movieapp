@@ -4,17 +4,18 @@ import {
     REQUEST_POPULAR_FAILED
 } from './constant';
 
-import API from './utils/api';
+const api_key = '779cb993a7038477d49a9deabe16ed77'; 
 
+
+
+console.log('Nothing');
 // Get Popular movies fom api
-export const requestPopular = () => async dispatch => {
-    try {
-        dispatch({type: REQUEST_POPULAR_PENDING});
-        console.log(API);
-        const response = await API.get('/movie/popular?&language=en-US&page=1');
-        console.log(response);
-        await dispatch({type: REQUEST_POPULAR_SUCCESS, payload:response})            
-    } catch (error) {
-        dispatch({type: REQUEST_POPULAR_FAILED, payload: error})
-    }
-};
+export const requestPopular = () => (dispatch) => {
+    dispatch({type: REQUEST_POPULAR_PENDING});
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}?&language=en-US&page=1`)
+    .then(response => response.json())
+    .then(data => dispatch({type: REQUEST_POPULAR_SUCCESS, payload:data}))            
+    .catch (error  => dispatch({type: REQUEST_POPULAR_FAILED, payload: error}))
+}
+
+console.log('Nothing');
