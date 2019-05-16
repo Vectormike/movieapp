@@ -2,7 +2,7 @@ import {
     REQUEST_TOP_PENDING,
     REQUEST_TOP_SUCCESS,
     REQUEST_TOP_FAILED
-} from './constant';
+} from '../constant';
 
 import API from '../api';
 
