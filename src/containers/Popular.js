@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { requestPopular } from '../actions';
+// import { requestPopular } from '../actions';
+import { requestPopular } from '../actions/popular';
 
 
 const mapStateToProps = (state) => {
@@ -27,7 +28,7 @@ class Popular extends Component {
   render() {
     const { popular } = this.props;
     const popularMovies = popular.map(i => i.title);
-    console.log(popularMovies);
+    
     return (
       <div>
         <p>{popularMovies}</p>
