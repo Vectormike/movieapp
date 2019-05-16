@@ -22,6 +22,7 @@ class Popular extends Component {
 
   componentDidMount() {
     console.log(this.props.popular)
+    this.props.onRequestPopular()
   }
 
   render() {
