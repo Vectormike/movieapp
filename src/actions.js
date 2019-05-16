@@ -14,7 +14,7 @@ import API from './api';
 // export const requestPopular = () =>  async dispatch => {
 //     try {
 //     dispatch({type: REQUEST_POPULAR_PENDING});
-//     const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
+//     const res = await fetch(`https://api.themoviedb.org/3/?api_key=${api_key}&language=en-US&page=1`)
 //     const data = res.json()
 //     console.log(data)
 //     await dispatch({
@@ -29,24 +29,21 @@ import API from './api';
 //     }
 // }
 
-console.log('Nothing');
 
 // Get Popular movies fom api
 export const requestPopular = () => async dispatch => {
    try {
        dispatch({type: REQUEST_POPULAR_PENDING});
-       const response = await API.get('/genre/movie/list');
+       const response = await API.get('/movie/popular');
        dispatch({
            type: REQUEST_POPULAR_SUCCESS, 
-           payload:response
+           payload:response.data.results
         })            
-        console.log(response.data)
-   } catch (error) {
+    } catch (error) {
        dispatch({
            type: REQUEST_POPULAR_FAILED, 
-           payload: error.response
+           payload: error.response.status
         })
    }
 }
 
-// /genre/movie/list
