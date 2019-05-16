@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './containers/App';
-import { requestPopular } from './reducers';
+import { requestPopular } from './reducers/popular';
+import { requestTopRated } from './reducers/top_rated';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -12,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const logger = createLogger();
 
-const rootReducer = combineReducers({requestPopular});
+const rootReducer = combineReducers({requestPopular, requestTopRated});
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
