@@ -5,9 +5,9 @@ import { requestPopular } from '../actions';
 
 const mapStateToProps = (state) => {
   return {
-    popular: state.popular,
-    isPending: state.isPending,
-    error: state.error
+    popular: state.requestPopular.popular,
+    isPending: state.requestPopular.isPending,
+    error: state.requestPopular.error
   }
 }
 
@@ -21,14 +21,16 @@ class Popular extends Component {
 
 
   componentDidMount() {
-    console.log(this.props.popular)
     this.props.onRequestPopular()
   }
 
   render() {
+    const { popular } = this.props;
+    const popularMovies = popular.map(i => i.title);
+    console.log(popularMovies);
     return (
       <div>
-        hi
+        <p>{popularMovies}</p>
       </div>
     )
   }
