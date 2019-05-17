@@ -1,90 +1,89 @@
+// import React from 'react';
+// import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
+// import SearchBar from '../SearchBar/SearchBar';
+
+// export default class Navigation extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.toggleNavbar = this.toggleNavbar.bind(this);
+//     this.state = {
+//       collapsed: true
+//     };
+//   }
+
+//   toggleNavbar() {
+//     this.setState({
+//       collapsed: !this.state.collapsed
+//     });
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <Navbar color="faded" light>
+//           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+//           <NavbarBrand href="/">Moviemania</NavbarBrand>
+                     
+//             <Collapse isOpen={!this.state.collapsed} navbar>
+//             <Nav className="ml-auto" navbar>
+//                 <NavItem>
+//                   <NavLink href="/components/">Components</NavLink>
+//                 </NavItem>
+//                 <NavItem>
+//                   <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+//                 </NavItem>
+//             </Nav>
+//             </Collapse>
+//         </Navbar>
+//       </div>
+//     );
+//   }
+// }
+
 import React from 'react';
-import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
-import SearchBar from '../SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink 
+} from 'reactstrap';
 
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-      collapsed: true
+      isOpen: false
     };
   }
-
-  toggleNavbar() {
+  toggle() {
     this.setState({
-      collapsed: !this.state.collapsed
+      isOpen: !this.state.isOpen
     });
   }
   render() {
     return (
       <div>
-        <Navbar color="faded" light>
-        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-        <NavbarBrand href="/">Moviemania</NavbarBrand>
-          <SearchBar href="/" className="ml-auto"/>
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-                <span className="genres">Genres</span>
+        <Navbar color="light" light expand="md">
+          <Link to="/"><NavbarBrand>Movimania</NavbarBrand></Link>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink>Action</NavLink>
+                  <Link to="/popular"><NavLink>Popular</NavLink></Link>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Adventure</NavLink>
+                  <Link to="/topRated"><NavLink>Top Rated</NavLink></Link>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Animation</NavLink>
+                  <NavLink Link to="/">Another Link</NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink>Comedy</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Crime</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Documentary</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Drama</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Family</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Fantasy</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>History</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Horror</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Music</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Mystery</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Romance</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Science Fiction</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>TV Movie</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Thriller</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>War</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink>Western</NavLink>
-                </NavItem>
-            </Nav>
+              </Nav>     
           </Collapse>
         </Navbar>
       </div>
