@@ -15,7 +15,7 @@ function App() {
       <Switch>
           <Route exact path ="/" component={Home}/>
           <Route path="/popular" component={Popular}/>
-          <Route path="topRated" component={TopRated}/>
+          <Route path="/topRated" component={TopRated}/>
       </Switch>
     </div>
       
