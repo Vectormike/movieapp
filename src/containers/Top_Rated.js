@@ -25,11 +25,15 @@ class Top_Rated extends Component {
 
     render() {
 		const {top} = this.props;
-		console.log(top);
-
+        const movies = top.map(i => i.title);
+        const overview = top.map(i => i.overview);
+        const date = top.map(i => i.release_date);
+        
         return (
             <div>
-                
+                <p>{movies}</p>
+                <p>{overview}</p>
+                <p>{date}</p>
             </div>
         );
     }
