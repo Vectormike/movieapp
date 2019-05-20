@@ -28,10 +28,14 @@ class Popular extends Component {
   render() {
     const { popular } = this.props;
     const popularMovies = popular.map(i => i.title);
-    
+    const overview = popular.map(i => i.overview);
+    const date = popular.map(i => i.release_date);
+   
     return (
       <div>
         <p>{popularMovies}</p>
+        <p>{overview}</p>
+        <p>{date}</p>
       </div>
     )
   }
