@@ -7,6 +7,7 @@ import Home from '../components/Home/Home';
 import Popular from '../containers/Popular';
 
 import TopRated from '../containers/Top_Rated';
+import Latest from './Latest';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path ="/" component={Home}/>
           <Route path="/popular" component={Popular}/>
           <Route path="/topRated" component={TopRated}/>
+          <Route path="/latest" component={Latest}/>
       </Switch>
     </div>
       
