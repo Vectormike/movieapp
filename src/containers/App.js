@@ -5,6 +5,7 @@ import Navigation from '../components/Navbar/Navigation';
 import Search from '../components/SearchBar/SearchBar';
 import Home from '../components/Home/Home';
 import Popular from '../containers/Popular';
+
 import TopRated from '../containers/Top_Rated';
 
 function App() {
