@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'tachyons';
 
 const logger = createLogger();
 
