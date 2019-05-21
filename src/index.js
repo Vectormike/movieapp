@@ -5,6 +5,7 @@ import './styles/index.css';
 import App from './containers/App';
 import { requestPopular } from './reducers/popular';
 import { requestTopRated } from './reducers/top_rated';
+import { requestLatest } from './reducers/latest';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
@@ -15,7 +16,7 @@ import 'tachyons';
 
 const logger = createLogger();
 
-const rootReducer = combineReducers({requestPopular, requestTopRated});
+const rootReducer = combineReducers({requestPopular, requestTopRated, requestLatest});
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
