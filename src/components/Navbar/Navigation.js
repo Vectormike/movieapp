@@ -39,7 +39,7 @@ export default class Navigation extends React.Component {
                   <NavLink to="/topRated">Top Rated</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/">Another Link</NavLink>
+                  <NavLink to="/latest">Latest</NavLink>
                 </NavItem>
               </Nav>     
           </Collapse>
