@@ -17,7 +17,7 @@ export const requestLatest = () => async dispatch => {
     } catch (error) {
         dispatch({
             type: REQUEST_LATEST_FAILED,
-            payload: error.response.status_message
+            payload: error.status_message
         })
     }
 }
