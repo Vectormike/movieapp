@@ -14,10 +14,11 @@ export const requestLatest = () => async dispatch => {
             type: REQUEST_LATEST_SUCCESS,
             payload: response.data
         })
+        // console.log(response);
     } catch (error) {
         dispatch({
             type: REQUEST_LATEST_FAILED,
-            payload: error.status_message
+            payload: error.response.status
         })
     }
 }
