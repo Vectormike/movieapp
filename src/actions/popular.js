@@ -15,11 +15,11 @@ export const requestPopular = () => async dispatch => {
         dispatch({
             type: REQUEST_POPULAR_SUCCESS, 
             payload:response.data.results
-         })            
+        })         
      } catch (error) {
         dispatch({
             type: REQUEST_POPULAR_FAILED, 
-            payload: error.response.status
+            payload: error
          })
     }
 }
