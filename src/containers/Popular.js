@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { requestPopular } from '../actions';
 import { requestPopular } from '../actions/popular';
+import '../styles/Home.css';
 
 
 const mapStateToProps = (state) => {
@@ -32,32 +33,28 @@ class Popular extends Component {
    
     return (
       <div>
-      <h1>Popular Movies</h1>
-
-      <div className="container">
-        <div className="row">
-            {
-              popular.map(i => {
-                return (
-                      <div key={i.id} className="col-xs-12 col-md-6 col-lg-3 ">
-                        <img src={`https://image.tmdb.org/t/p/w500/${i.poster_path}`} alt='img' title='Image' className="shadow-3"/>
-                        <dl className="f7 pa2 ma br3 ">
-                            <dt className="clip">Title</dt>        
-                            <dd className="ml0 black w-100">{i.title}</dd>
-                            <dt className="clip">Description</dt>
-                            <dd className="ml0 black w-100">{i.overview}</dd>
-                            <dt className="clip">Vote average</dt>
-                            <dd className="ml0 black w-100">{i.vote_average}</dd>
-                            <dt className="clip">Date</dt>
-                            <dd className="ml0 black w-100">{i.release_date} <i className="fas fa-heart"></i> </dd>
-                        </dl>
+        <h1 className="tc grow">Popular Movies</h1>
+        <div className="container">
+          <div className="row">
+              {
+                popular.map(i => {
+                  return (
+                    <div key={i.id} className="col-xs-12 col-md-6 col-lg-3">
+                      <div className="card">
+                        <img className="card-img" src={`https://image.tmdb.org/t/p/w500/${i.poster_path}`} alt='img' title='Image'/>
+                          <div className="card-content">
+                            <h4 className="card-title">{i.title}</h4>
+                            <p className="card-text">{i.overview}</p>
+                            <p>{i.vote_average}</p>
+                            <p className="tc">Released: {i.release_date}</p>
+                          </div>
                       </div>
-                  
-                )
-              })
-            }      
+                    </div>
+                  )
+                })
+              }      
+          </div>
         </div>
-      </div>
     </div>
 
     )
