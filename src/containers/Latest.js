@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { requestPopular } from '../actions';
 import { requestLatest } from '../actions/latest';
+import '../styles/Home.css';
 
 
 const mapStateToProps = (state) => {
@@ -30,24 +31,25 @@ class Latest extends Component {
     // const overview = popular.map(i => i.overview);
     
     return (
-            <div className="container">
-              <div className="row">
-                  <div  className="col-xs-12 col-md-12 col-lg-12 pa3 ma">
-                    <img src={`https://image.tmdb.org/t/p/w500/${latest.poster_path}`} alt='img' title={latest.title} className="shadow-3"/>
-                    <dl className="f7 pa2 ma br3 ">
-                        <dt className="clip">Title</dt>        
-                        <dd className="ml0 black w-100">{latest.title}</dd>
-                        <dt className="clip">Description</dt>
-                        <dd className="ml0 black w-100">{latest.overview}</dd>
-                        <dt className="clip">Vote average</dt>
-                        <dd className="ml0 black w-100">{latest.vote_average}</dd>
-                        <dt className="clip">Date</dt>
-                        <dd className="ml0 black w-100">{latest.release_date} <i className="fas fa-heart"></i> </dd>
-                    </dl>
+      <div>
+        <h1 className="tc grow">Just Released</h1>
+        <div className="container">
+          <div className="row">
+          <div key={latest.id} className="col-xs-12 col-md-6 col-lg-3">
+                  <div className="card">
+                    <img className="card-img" src={`https://image.tmdb.org/t/p/w500/${latest.poster_path}`} alt='img' title='Image'/>
+                      <div className="card-content">
+                        <h4 className="card-title">{latest.title}</h4>
+                        <p className="card-text">{latest.overview}</p>
+                        <p>{latest.vote_average}</p>
+                        <p className="tc">Released: {latest.release_date}</p>
+                      </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          )
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 export default connect (mapStateToProps, mapDispatchToProps)(Latest);
