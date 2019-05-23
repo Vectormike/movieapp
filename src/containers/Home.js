@@ -30,21 +30,21 @@ class Home extends Component {
     
     return (
       <div>
-        <h1>In Cinemas now</h1>
+        <h1 className="tc grow">In Cinemas now</h1>
 
         <div className="container">
           <div className="row">
               {
                 theatres.map(i => {
                   return (
-                    <div key={i.id} className="col-xs-12 col-md-6 col-lg-3 ">
+                    <div key={i.id} className="br3 col-xs-12 col-md-6 col-lg-3">
                       <div className="card">
-                        <img className="card-img" src={`https://image.tmdb.org/t/p/w500/${i.poster_path}`} alt='img' title='Image' className="shadow-3"/>
-                          <h4 className="card-title">{i.title}</h4>
-                          <p className="card-text">{i.overview}</p>
-                          <p>{i.vote_average}</p>
-                          <div className="footer">
-                            <small>Created {i.release_date}</small>
+                        <img className="card-img" src={`https://image.tmdb.org/t/p/w500/${i.poster_path}`} alt='img' title='Image'/>
+                          <div className="card-content">
+                            <h4 className="card-title">{i.title}</h4>
+                            <p className="card-text">{i.overview}</p>
+                            <p>{i.vote_average}</p>
+                            <p className="tc">Released: {i.release_date}</p>
                           </div>
                         </div>
                     </div>                    
