@@ -1,0 +1,17 @@
+.card {
+    padding-left: auto;
+    padding-right: auto;
+    margin-top: 12px;
+    height: 800px;
+    box-shadow: 2px 0 1px 0px rgba(7, 5, 4, 0.15);  
+    -webkit-transition: .25s box-shadow;
+    transition: .25s box-shadow;
+}
+
+.card:focus, .card:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    margin-top:100px;
+}
