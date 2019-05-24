@@ -18,6 +18,6 @@ export const requestSearched = (query) => async dispatch => {
         dispatch({
             type: REQUEST_SEARCHED_FAILED,
             payload: error.response
-        })
+        }) 
     }
 }
