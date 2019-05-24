@@ -22,7 +22,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  font-size: 14px;
+  font-size: 20px;
   background-color: transparent;
   width: 100%;
   margin-left: ${props => (props.searchOpen ? "1rem" : "0rem")};
