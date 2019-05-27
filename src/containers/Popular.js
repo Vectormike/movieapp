@@ -40,7 +40,7 @@ class Popular extends Component {
                 popular.map(i => {
                   return (
                     <div key={i.id} className="col-xs-12 col-md-6 col-lg-3">
-                      <div className="card">
+                      <div className="card c">
                         <img className="card-img" src={`https://image.tmdb.org/t/p/w500/${i.poster_path}`} alt='img' title='Image'/>
                           <div className="card-content">
                             <h4 className="card-title">{i.title}</h4>
