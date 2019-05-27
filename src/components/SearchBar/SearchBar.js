@@ -1,10 +1,16 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
-
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
-
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { request } from '../actions/searched';
+
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+
 
 const Form = styled.form`
   position: relative;
@@ -48,6 +54,7 @@ const Button = styled.button`
 
 function SearchBar() {
 
+    const [results, setResults] = useState([])
     const [value, setValue] = useState("");
     const [searchOpen, setSearchOpen] = useState(false);
     const formRef = useRef();
@@ -61,6 +68,10 @@ function SearchBar() {
           document.removeEventListener("mousedown", mouseClick);
         };
       }, []);
+      
+    useEffect(() => {
+
+    }, [])
       
     const mouseClick = (e) => {
         if (formRef.current.contains(e.target)) {
@@ -81,7 +92,7 @@ function SearchBar() {
     }
   
     const onChange = (e) => {
-      setValue(e.target.value);
+      setValue(e.target.value);  
     }
     return (
         <div>
@@ -105,11 +116,12 @@ function SearchBar() {
                 placeholder='Search for a movie'
                 />
             </Form>
+            <Searched results={results}/>
         </div>
     );
 }
 
-export default SearchBar;
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
 
 
 // Credit => https://codesandbox.io/s/731r7084p0
