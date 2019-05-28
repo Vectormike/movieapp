@@ -1,17 +1,18 @@
-
 .card {
     padding-left: auto;
     padding-right: auto;
     margin-top: 12px;
     margin-bottom: 50px;
     min-height: 100px;
-    box-shadow: 2px 0 1px 0px whitesmoke;  
+    border-radius: 50px;
+    background: rgb(228, 197, 197);
+    box-shadow: 2px 0 1px 0px rgb(119, 106, 106);  
     -webkit-transition: .35s box-shadow;
     transition: .35s box-shadow;
 }
 
 .card:focus, .card:hover {
-    box-shadow: 10px 15px 100px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 15px 100px 0 rgba(221, 224, 48, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
 .card-content {
