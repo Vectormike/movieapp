@@ -25,12 +25,12 @@ export default class Navigation extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="">
         <Navbar color="dark" dark expand="md">
           <NavLink to="/">Movimania</NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="tracked ml-auto" navbar>
                 <NavItem>
                   <NavLink to="/popular">Popular</NavLink>
                 </NavItem>
