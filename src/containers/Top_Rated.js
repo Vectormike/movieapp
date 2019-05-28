@@ -32,9 +32,8 @@ class Top_Rated extends Component {
         
         return (
             <div>
-            <h1 className="tc grow">Most Rated Movies</h1>
-    
-            <div className="container">
+            <h1 className="grow">Most Rated Movies</h1>
+            <div className="">
               <div className="row">
                   {
                     top.map(i => {
