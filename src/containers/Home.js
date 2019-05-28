@@ -29,10 +29,9 @@ class Home extends Component {
     const { theatres } = this.props;
     
     return (
-      <div>
-        <h1 className="tc grow">In Cinemas now</h1>
-
-        <div className="container">
+      <div className="">
+        <h1 className="grow">In Cinemas now</h1>
+        <div className="">
           <div className="row">
               {
                 theatres.map(i => {
