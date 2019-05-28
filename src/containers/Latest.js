@@ -32,8 +32,8 @@ class Latest extends Component {
     
     return (
       <div>
-        <h1 className="tc grow">Just Released</h1>
-        <div className="container">
+        <h1 className="grow">Just Released</h1>
+        <div className="c">
           <div className="row">
           <div key={latest.id} className="col-xs-12 col-md-6 col-lg-3">
                   <div className="card">
