@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { request } from '../actions/searched';
+import { requestSearched } from '../actions/searched';
 
 const mapStateToProps = (state) => {
   return {
+    isPending: state.requestSearched.isPending,
+    searched: state.requestSearched.searched,
+    error: state.requestSearched.error
+  }
+}
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onRequestSearched: () => dispatch(requestSearched())
   }
 }
 
@@ -69,7 +78,8 @@ function SearchBar() {
       }, []);
       
     useEffect(() => {
-
+      console.log(value)
+      this.onRequestSearched(value)
     }, [])
       
     const mouseClick = (e) => {
@@ -91,7 +101,7 @@ function SearchBar() {
     }
   
     const onChange = (e) => {
-      setValue(e.target.value);  
+      setValue(e.target.value);
     }
     return (
         <div>
@@ -115,7 +125,6 @@ function SearchBar() {
                 placeholder='Search for a movie'
                 />
             </Form>
-            <Searched results={results}/>
         </div>
     );
 }

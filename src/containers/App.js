@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navigation from '../components/Navbar/Navigation';
-import SearchField from '../containers/SearchBar/SearchBar';
+import SearchField from '../containers/SearchBar';
 import Home from '../containers/Home';
 import Popular from '../containers/Popular';
 import TopRated from '../containers/Top_Rated';
