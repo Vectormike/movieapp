@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import React, { Component } from 'react';
+// import styled from 'styled-components';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { requestSearched } from '../actions/searched';
 
@@ -19,16 +19,33 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-class SearchBar extends React.Component{
+
+
+class SearchBar extends Component{
+  
+  state = {
+    movie: ""
+  }
+  
   componentDidMount() {
 
+    
   }
 
+
+  onChange = (e) => {
+    this.setState({movie: e.target.value})
+    this.props.onRequestSearched(e.target.value)
+  } 
+
   render() {
-    
+    console.log(this.props)  
     return (
       <div>
-
+        <input
+          type="search"
+          onChange={this.onChange}
+        />
       </div>
     )
   }

@@ -12,7 +12,7 @@ export const requestSearched = (query) => async dispatch => {
         const response = API.get(`/search/movie?query=${query}&page=1`);
         dispatch({
             type: REQUEST_SEARCHED_SUCCESS,
-            payload: response.data.results
+            payload: response
         })
     } catch (error) {
         dispatch({
