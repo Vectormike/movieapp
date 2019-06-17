@@ -8,7 +8,7 @@ import { requestSearched } from '../actions/searched';
 const mapStateToProps = (state) => {
   return {
     isPending: state.requestSearched.isPending,
-    searched: state.requestSearched.searched,
+    searchedMovies: state.requestSearched.searchedMovies,
     error: state.requestSearched.error
   }
 }
@@ -23,23 +23,18 @@ const mapDispatchToProps = (dispatch) => {
 
 class SearchBar extends Component{
   
-  state = {
-    movie: ""
-  }
   
   componentDidMount() {
-
-    
+        
   }
 
 
   onChange = (e) => {
-    this.setState({movie: e.target.value})
     this.props.onRequestSearched(e.target.value)
   } 
 
   render() {
-    console.log(this.props)  
+  
     return (
       <div>
         <input
