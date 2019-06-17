@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/index.css';
 import App from './containers/App';
+import ReduxPromise from 'redux-promise';
 import { requestPopular } from './reducers/popular';
 import { requestTopRated } from './reducers/top_rated';
 import { requestLatest } from './reducers/latest';
@@ -20,7 +21,7 @@ const logger = createLogger();
 
 const rootReducer = combineReducers({requestPopular, requestTopRated, requestLatest, requestTheatres, requestSearched});
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, ReduxPromise, logger));
 
 ReactDOM.render(
     <Router>
