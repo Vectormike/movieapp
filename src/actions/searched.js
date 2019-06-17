@@ -6,7 +6,7 @@ import {
 
 import API from '../api';
 
-export const requestSearched = (query) => async dispatch => {
+export const requestSearched = () => async dispatch => {
     try {
         dispatch({type: REQUEST_SEARCHED_PENDING});
         const response = API.get(`/search/movie?query=${query}&page=1`);
