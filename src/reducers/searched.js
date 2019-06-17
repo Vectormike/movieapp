@@ -4,18 +4,18 @@ import {
     REQUEST_SEARCHED_FAILED
 } from '../constant';
 
-const initialSearch = {
+const initialSearchState = {
     isPending: false,
-    searchedMovies: [],
+    search: [],
     error: ''
 }
 
-export const requestSearched = (state=initialSearch, action={}) => {
+export const requestSearched = (state=initialSearchState, action={}) => {
     switch (action.type) {
         case REQUEST_SEARCHED_PENDING:
             return Object.assign({}, state, {isPending: true})
         case REQUEST_SEARCHED_SUCCESS:
-            return Object.assign({}, state, {searchedMovies: action.payload})
+            return Object.assign({}, state, {search: action.payload})
         case REQUEST_SEARCHED_FAILED:
             return Object.assign({}, state, {error: action.payload})
         default:

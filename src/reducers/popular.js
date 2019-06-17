@@ -19,7 +19,7 @@ export const requestPopular = (state= initialPopularState, action={}) => {
         case REQUEST_POPULAR_SUCCESS:
             return Object.assign({}, state, {popular: action.payload, isPending:false})
         case REQUEST_POPULAR_FAILED:
-            return Object.assign({}, state, {error: action.payload,isPending:false})
+            return Object.assign({}, state, {error: action.payload, isPending:false})
         default:
             return state;
     }
