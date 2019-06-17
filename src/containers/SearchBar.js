@@ -13,11 +13,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onRequestSearched: () => dispatch(requestSearched())
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     onRequestSearched: () => dispatch(requestSearched())
+//   }
+// }
 
 
 
@@ -30,7 +30,7 @@ class SearchBar extends Component{
 
 
   onChange = (e) => {
-    this.props.onRequestSearched(e.target.value)
+    this.props.requestSearched(e.target.value)
   } 
 
   render() {
@@ -46,7 +46,7 @@ class SearchBar extends Component{
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, {requestSearched})(SearchBar);
 
 
 
