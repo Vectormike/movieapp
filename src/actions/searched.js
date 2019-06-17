@@ -6,10 +6,10 @@ import {
 
 import API from '../api';
 
-export const requestSearched = () => async dispatch => {
+export const requestSearched = (term) => async dispatch => {
     try {
         dispatch({type: REQUEST_SEARCHED_PENDING});
-        const response = API.get(`/search/movie?query=${query}&page=1`);
+        const response = await API.get(`/search/movie?api_key=779cb993a7038477d49a9deabe16ed77&language=en-US&query=${term}&page=1&include_adult=false`);
         dispatch({
             type: REQUEST_SEARCHED_SUCCESS,
             payload: response
