@@ -21,4 +21,5 @@ export const requestSearched = (state=initialSearchState, action={}) => {
         default:
             return state
     }
+
 }

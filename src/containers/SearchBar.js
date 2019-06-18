@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { requestSearched } from '../actions/searched';
+import {Link} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   return {
@@ -18,9 +19,7 @@ const mapStateToProps = (state) => {
 //     onRequestSearched: () => dispatch(requestSearched())
 //   }
 // }
-
-
-
+ 
 class SearchBar extends Component{
 
   onChange = (e) => {
@@ -29,17 +28,22 @@ class SearchBar extends Component{
 
   render() {
     return (
-      <div>
+      <div className="tc pa3">
         <input
           type="search"
           onChange={this.onChange}
         />
+        <button
+          type="submit"
+        >
+        <Link to="/searched">Search</Link>
+        </button>
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, {requestSearched})(SearchBar);
+export default connect(mapStateToProps, {requestSearched}) (SearchBar);
 
 
 
