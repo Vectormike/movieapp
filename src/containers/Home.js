@@ -29,7 +29,7 @@ class Home extends Component {
     const { theatres } = this.props;
     
     return (
-      <div className="pa4 ma4">
+      <div className="">
         <h1 className="grow">In Cinemas now</h1>
         <div className="">
           <div className="row">

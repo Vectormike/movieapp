@@ -31,7 +31,7 @@ class Top_Rated extends Component {
         // const date = top.map(i => i.release_date);
         
         return (
-            <div className="pa4 ma4">
+            <div className="">
             <h1 className="grow">Most Rated Movies</h1>
             <div className="">
               <div className="row">
