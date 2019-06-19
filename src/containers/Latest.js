@@ -31,7 +31,7 @@ class Latest extends Component {
     // const overview = popular.map(i => i.overview);
     
     return (
-      <div>
+      <div className="pa4">
         <h1 className="grow">Just Released</h1>
         <div className="">
           <div className="row">

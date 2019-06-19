@@ -50,7 +50,11 @@ class SearchBar extends Component{
               />
             </div>
           </div>
-          <Link to="/searched">
+          <Link style={
+            {
+              textDecoration: 'none'
+            }
+          } to="/searched">
             <button 
               type="submit" 
               className="grow ma2 searchButton"
