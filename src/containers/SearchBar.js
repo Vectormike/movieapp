@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import '../styles/SearchBar.css'
 import { connect } from 'react-redux';
 import { requestSearched } from '../actions/searched';
 import {Link} from 'react-router-dom';
@@ -19,25 +20,44 @@ const mapStateToProps = (state) => {
 //     onRequestSearched: () => dispatch(requestSearched())
 //   }
 // }
+
  
 class SearchBar extends Component{
 
+  
   onChange = (e) => {
     this.props.requestSearched(e.target.value)
   } 
-
+  
+  onKeyPress = (e) => {
+    if(e.keyCode === 13 || e.charCode === 13) {
+      this.props.requestSearched(e.target.value)
+    }
+  } 
+ 
   render() {
     return (
-      <div className="tc pa3">
-        <input
-          type="search"
-          onChange={this.onChange}
-        />
-        <button
-          type="submit"
-        >
-        <Link to="/searched">Search</Link>
-        </button>
+      <div className="search-bar ">
+          <div className="field">
+            <label htmlFor="search">Search for a movie...</label>
+            <div className="input">
+              <input 
+                id="search" 
+                type="text" 
+                onChange={this.onChange}
+                onKeyPress={this.onKeyPress}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+          <Link to="/searched">
+            <button 
+              type="submit" 
+              className="grow ma2 searchButton"
+            >
+              <i className="fa fa-search"></i>
+            </button>
+          </Link>
       </div>
     )
   }
