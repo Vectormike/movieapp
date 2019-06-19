@@ -32,7 +32,7 @@ class Latest extends Component {
     
     return (
       <div className="pa4">
-        <h1 className="grow">Just Released</h1>
+        <h1 className="dim">Just Released</h1>
         <div className="">
           <div className="row">
           <div key={latest.id} className="col-xs-12 col-md-6 col-lg-3">

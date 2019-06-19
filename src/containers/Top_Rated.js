@@ -32,7 +32,7 @@ class Top_Rated extends Component {
         
         return (
             <div className="pa4">
-            <h1 className="grow">Most Rated Movies</h1>
+            <h1 className="dim">Most Rated Movies</h1>
             <div className="">
               <div className="row">
                   {

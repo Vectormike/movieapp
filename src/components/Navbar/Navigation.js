@@ -26,21 +26,54 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div className="">
-        <Navbar color="dark" dark expand="md">
-          <NavLink to="/">Movimania</NavLink>
+        <Navbar style={
+          {
+            color: '#8E8D8F'
+          }
+        }  expand="md">
+          <NavLink style={
+            {
+              textDecoration: 'none',
+              color: 'white'
+            }
+          } to="/">Movimania</NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="tracked ml-auto" navbar>
-                <NavItem>
-                  <NavLink to="/popular">Popular</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/topRated">Top Rated</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/latest">Latest</NavLink>
-                </NavItem>
-              </Nav>     
+          <Nav style={
+            {
+              padding: '5px',
+              margin: '5px'
+            }
+          } className="tracked ml-auto" navbar>
+            <NavItem>
+              <NavLink style={
+              {
+                textDecoration: 'none',
+                color: 'white'
+              }
+            } 
+            to="/popular">Popular</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink style={
+                {
+                  textDecoration: 'none',
+                  padding: '30px',
+                  color: 'white'
+                }
+              }   
+            to="/topRated">Top Rated</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink style={
+                  {
+                    textDecoration: 'none',
+                    color: 'white'
+                  }
+                }
+              to="/latest">Latest</NavLink>
+            </NavItem>
+          </Nav>     
           </Collapse>
         </Navbar>
       </div>

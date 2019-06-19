@@ -33,7 +33,7 @@ class Popular extends Component {
    
     return (
       <div className="pa4">
-        <h1 className="grow">Popular Movies</h1>
+        <h1 className="dim">Popular Movies</h1>
         <div className="">
           <div className="row">
               {
