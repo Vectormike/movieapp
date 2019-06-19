@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Mali|Rubik&display=swap');
 body {
     background-color: #5B534A; 
   }
@@ -5,6 +6,11 @@ body {
   h1{
     color:#F9E6C7;
     text-align: center;
+  }
+
+  .navBar {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
   }
   
   /* width */

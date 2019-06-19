@@ -25,7 +25,7 @@ export default class Navigation extends React.Component {
   }
   render() {
     return (
-      <div className="">
+      <div className="navBar">
         <Navbar style={
           {
             color: '#8E8D8F'
@@ -36,7 +36,7 @@ export default class Navigation extends React.Component {
               textDecoration: 'none',
               color: 'white'
             }
-          } to="/">Movimania</NavLink>
+          } to="/">Moviemania</NavLink>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav style={
